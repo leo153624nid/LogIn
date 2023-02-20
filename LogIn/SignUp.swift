@@ -17,7 +17,7 @@ struct SignUp : View {
     
     var body : some View {
         VStack {
-             Text("Sign In").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+             Text("Sign Up").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
             VStack{
                 
                 VStack(alignment: .leading){
@@ -68,7 +68,7 @@ struct SignUp : View {
                 
                 Button(action: {
                     
-                    signInWithEmail(email: self.email, password: self.pass, competion: ({ (verified, status) in
+                    signUpWithEmail(email: self.email, password: self.pass, competion: ({ (verified, status) in
                         
                         if !verified {
                             
@@ -78,15 +78,15 @@ struct SignUp : View {
                         else {
                             
                             UserDefaults.standard.set(true, forKey: "status")
-                            NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                            self.show.toggle()
                         }
                     }))
                     
                 }) {
                     
-                    Text("Sign In").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                    Text("Sign Up").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
                     
-                }.background(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
+                }.background(Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)))
                 .clipShape(Capsule())
                 .padding(.top, 45)
                 .alert(isPresented: $alert, content: {
@@ -94,21 +94,6 @@ struct SignUp : View {
                     Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("Ok")))
                 })
             
-                Text("(or)").foregroundColor(Color.gray.opacity(0.5)).padding(.top,30)
-                
-                HStack(spacing: 8){
-                    
-                    Text("Don't Have An Account ?").foregroundColor(Color.gray.opacity(0.5))
-                    
-                    Button(action: {
-                        
-                    }) {
-                        
-                        Text("Sign Up")
-                        
-                    }.foregroundColor(.blue)
-                    
-                }.padding(.top, 25)
             }
         }
     }
