@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SignIn : View {
     
-    @State var user = ""
+    @State var email = ""
     @State var pass = ""
     
-    var body : some View{
+    var body : some View {
         VStack {
              Text("Sign In").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
             VStack{
@@ -25,11 +25,11 @@ struct SignIn : View {
                         
                         HStack{
                             
-                            TextField("Enter Your Username", text: $user)
+                            TextField("Enter Your Username", text: $email)
                             
-                            if user != ""{
+                            if email != "" {
                                 
-                                Image("check").foregroundColor(Color.init(.label))
+                                Image(systemName: "checkmark").foregroundColor(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
                             }
                             
                         }
@@ -42,9 +42,20 @@ struct SignIn : View {
                         
                         Text("Password").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label).opacity(0.75))
                         
-                        SecureField("Enter Your Password", text: $pass)
+                        HStack {
+                            
+                            SecureField("Enter Your Password", text: $pass)
+                            
+                            if pass.count >= 6 {
+                                
+                                Image(systemName: "checkmark").foregroundColor(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
+                            }
+                        }
                         
                         Divider()
+                        
+                        Text("description TODO").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label).opacity(0.75))
+                        
                     }
                       
                 }.padding(.horizontal, 6)
