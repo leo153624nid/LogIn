@@ -10,8 +10,32 @@ import FirebaseCore
 import FirebaseAuth
 
 struct ContentView: View {
+    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+    
     var body: some View {
-        SignIn()
+        
+        VStack {
+            
+            if status {
+                
+                HomeView(name: .constant("111")) // todo
+                
+            }
+            else {
+                
+                SignIn()
+                
+            }
+           
+        }.animation(.spring())
+        .onAppear {
+            
+            NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main, using: { _ in
+                
+                self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+            })
+            
+        }
     }
 }
 
