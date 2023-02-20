@@ -109,7 +109,11 @@ struct SignIn : View {
                     }.foregroundColor(.blue)
                     
                 }.padding(.top, 25)
-            }
+            }.sheet(isPresented: $show, content: {
+                
+                SignUp(show: self.show)
+                
+            })
         }
     }
 }
