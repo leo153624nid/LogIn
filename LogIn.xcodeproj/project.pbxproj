@@ -14,6 +14,7 @@
 		FA59AABB29A3AECE00D8E440 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA59AABA29A3AECE00D8E440 /* Preview Assets.xcassets */; };
 		FA59AAC429A3B9E400D8E440 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AAC329A3B9E400D8E440 /* SignUp.swift */; };
 		FAA6A22529A3CA59008EA109 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAA6A22429A3CA59008EA109 /* GoogleService-Info.plist */; };
+		FAA6A22929A3D0AB008EA109 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A22829A3D0AB008EA109 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FA59AABC29A3AECE00D8E440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA59AAC329A3B9E400D8E440 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		FAA6A22429A3CA59008EA109 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAA6A22829A3D0AB008EA109 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				FA59AAB329A3AECC00D8E440 /* LogInApp.swift */,
 				FA59AAB529A3AECC00D8E440 /* ContentView.swift */,
 				FA59AAC329A3B9E400D8E440 /* SignUp.swift */,
+				FAA6A22829A3D0AB008EA109 /* HomeView.swift */,
 				FA59AAB729A3AECE00D8E440 /* Assets.xcassets */,
 				FA59AABC29A3AECE00D8E440 /* Info.plist */,
 				FAA6A22429A3CA59008EA109 /* GoogleService-Info.plist */,
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA59AAB629A3AECC00D8E440 /* ContentView.swift in Sources */,
+				FAA6A22929A3D0AB008EA109 /* HomeView.swift in Sources */,
 				FA59AAC429A3B9E400D8E440 /* SignUp.swift in Sources */,
 				FA59AAB429A3AECC00D8E440 /* LogInApp.swift in Sources */,
 			);
