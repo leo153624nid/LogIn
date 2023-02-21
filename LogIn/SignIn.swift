@@ -77,7 +77,7 @@ struct SignIn : View {
                 
                 Button(action: {
                     
-                    signInWithEmail(email: self.email, password: self.pass, competion: { (verified, status) in
+                    UserAPI.signInWithEmail(email: self.email, password: self.pass, competion: { (verified, status) in
                         
                         if !verified {
                             
@@ -86,8 +86,8 @@ struct SignIn : View {
                         }
                         else {
                             
-                            UserDefaults.standard.set(self.email, forKey: "user")
-                            NotificationCenter.default.post(name: NSNotification.Name("userChange"), object: nil)
+                            UserDefaults.standard.set(self.email, forKey: Keys.user.rawValue)
+                            NotificationCenter.default.post(name: .userChange, object: nil)
                         }
                     })
                     
