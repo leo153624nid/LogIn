@@ -30,7 +30,7 @@ struct HomeView: View {
             }, label: {
                 
                 Text("LogOut")
-                    .foregroundColor(.white)
+                    .foregroundColor(Constants.whiteColor)
                     .frame(width: Constants.buttonWidth)
                     .padding()
             })
