@@ -18,7 +18,10 @@ struct SignUp : View {
     var body : some View {
         VStack {
             
-            Text("Sign Up").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+            Text("Sign Up")
+                .fontWeight(.heavy)
+                .font(.largeTitle)
+                .padding([.top,.bottom], 20)
             
             VStack{
                 
@@ -26,7 +29,10 @@ struct SignUp : View {
                     
                     VStack(alignment: .leading){
                         
-                        Text("Username").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label).opacity(0.75))
+                        Text("Username")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            .foregroundColor(Color.init(.label).opacity(0.75))
                         
                         HStack{
                             
@@ -45,7 +51,10 @@ struct SignUp : View {
                     
                     VStack(alignment: .leading){
                         
-                        Text("Password").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label).opacity(0.75))
+                        Text("Password")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            .foregroundColor(Color.init(.label).opacity(0.75))
                         
                         HStack {
                             
@@ -59,8 +68,6 @@ struct SignUp : View {
                         
                         Divider()
                         
-                        Text("description TODO").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label).opacity(0.75))
-                        
                     }
                       
                 }.padding(.horizontal, 6)
@@ -71,7 +78,7 @@ struct SignUp : View {
                 
                 Button(action: {
                     
-                    signUpWithEmail(email: self.email, password: self.pass, competion: ({ (verified, status) in
+                    signUpWithEmail(email: self.email, password: self.pass, competion: { (verified, status) in
                         
                         if !verified {
                             
@@ -83,11 +90,14 @@ struct SignUp : View {
                             UserDefaults.standard.set(self.email, forKey: "user")
                             self.show.toggle()
                         }
-                    }))
+                    })
                     
                 }) {
                     
-                    Text("Sign Up").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                    Text("Sign Up")
+                        .foregroundColor(.white)
+                        .frame(width: UIScreen.main.bounds.width - 120)
+                        .padding()
                     
                 }.background(Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)))
                 .clipShape(Capsule())
