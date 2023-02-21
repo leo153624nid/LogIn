@@ -17,7 +17,9 @@ struct SignIn : View {
     
     var body : some View {
         VStack {
-             Text("Sign In").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+            
+            Text("Sign In").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+            
             VStack{
                 
                 VStack(alignment: .leading){
@@ -77,8 +79,8 @@ struct SignIn : View {
                         }
                         else {
                             
-                            UserDefaults.standard.set(true, forKey: "status")
-                            NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                            UserDefaults.standard.set(self.email, forKey: "user")
+                            NotificationCenter.default.post(name: NSNotification.Name("userChange"), object: nil)
                         }
                     }))
                     
@@ -101,6 +103,8 @@ struct SignIn : View {
                     Text("Don't Have An Account ?").foregroundColor(Color.gray.opacity(0.5))
                     
                     Button(action: {
+                        
+                        self.show.toggle()
                         
                     }) {
                         
