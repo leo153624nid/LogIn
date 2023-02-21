@@ -32,7 +32,7 @@ struct SignUp : View {
                         Text("Username")
                             .font(.headline)
                             .fontWeight(.light)
-                            .foregroundColor(Color.init(.label).opacity(0.75))
+                            .foregroundColor(Constants.blackOpacityColor)
                         
                         HStack{
                             
@@ -40,7 +40,7 @@ struct SignUp : View {
                             
                             if email != "" {
                                 
-                                Image(systemName: "checkmark").foregroundColor(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
+                                Image(systemName: "checkmark").foregroundColor(Constants.greenColor)
                             }
                             
                         }
@@ -54,15 +54,15 @@ struct SignUp : View {
                         Text("Password")
                             .font(.headline)
                             .fontWeight(.light)
-                            .foregroundColor(Color.init(.label).opacity(0.75))
+                            .foregroundColor(Constants.blackOpacityColor)
                         
                         HStack {
                             
                             SecureField("Enter Your Password", text: $pass)
                             
-                            if pass.count >= 6 {
+                            if pass.count >= Constants.passwordLenght {
                                 
-                                Image(systemName: "checkmark").foregroundColor(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
+                                Image(systemName: "checkmark").foregroundColor(Constants.greenColor)
                             }
                         }
                         
@@ -95,11 +95,11 @@ struct SignUp : View {
                 }) {
                     
                     Text("Sign Up")
-                        .foregroundColor(.white)
-                        .frame(width: UIScreen.main.bounds.width - 120)
+                        .foregroundColor(Constants.whiteColor)
+                        .frame(width: Constants.buttonWidth)
                         .padding()
                     
-                }.background(Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)))
+                }.background(Constants.blueColor)
                 .clipShape(Capsule())
                 .padding(.top, 45)
                 .alert(isPresented: $alert, content: {
