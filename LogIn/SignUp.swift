@@ -78,7 +78,7 @@ struct SignUp : View {
                 
                 Button(action: {
                     
-                    signUpWithEmail(email: self.email, password: self.pass, competion: { (verified, status) in
+                    UserAPI.signUpWithEmail(email: self.email, password: self.pass, competion: { (verified, status) in
                         
                         if !verified {
                             
@@ -87,7 +87,7 @@ struct SignUp : View {
                         }
                         else {
                             
-                            UserDefaults.standard.set(self.email, forKey: "user")
+                            UserDefaults.standard.set(self.email, forKey: Keys.user.rawValue)
                             self.show.toggle()
                         }
                     })
