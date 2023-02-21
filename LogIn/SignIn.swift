@@ -18,7 +18,10 @@ struct SignIn : View {
     var body : some View {
         VStack {
             
-            Text("Sign In").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+            Text("Sign In")
+                .fontWeight(.heavy)
+                .font(.largeTitle)
+                .padding([.top,.bottom], 20)
             
             VStack{
                 
@@ -26,7 +29,10 @@ struct SignIn : View {
                     
                     VStack(alignment: .leading){
                         
-                        Text("Username").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label).opacity(0.75))
+                        Text("Username")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            .foregroundColor(Color.init(.label).opacity(0.75))
                         
                         HStack{
                             
@@ -45,7 +51,10 @@ struct SignIn : View {
                     
                     VStack(alignment: .leading){
                         
-                        Text("Password").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label).opacity(0.75))
+                        Text("Password")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            .foregroundColor(Color.init(.label).opacity(0.75))
                         
                         HStack {
                             
@@ -59,8 +68,6 @@ struct SignIn : View {
                         
                         Divider()
                         
-                        Text("description TODO").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label).opacity(0.75))
-                        
                     }
                       
                 }.padding(.horizontal, 6)
@@ -70,7 +77,7 @@ struct SignIn : View {
                 
                 Button(action: {
                     
-                    signInWithEmail(email: self.email, password: self.pass, competion: ({ (verified, status) in
+                    signInWithEmail(email: self.email, password: self.pass, competion: { (verified, status) in
                         
                         if !verified {
                             
@@ -82,11 +89,13 @@ struct SignIn : View {
                             UserDefaults.standard.set(self.email, forKey: "user")
                             NotificationCenter.default.post(name: NSNotification.Name("userChange"), object: nil)
                         }
-                    }))
+                    })
                     
                 }) {
                     
-                    Text("Sign In").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                    Text("Sign In")
+                        .foregroundColor(.white)
+                        .frame(width: UIScreen.main.bounds.width - 120).padding()
                     
                 }.background(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
                 .clipShape(Capsule())
@@ -96,11 +105,14 @@ struct SignIn : View {
                     Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("Ok")))
                 })
             
-                Text("(or)").foregroundColor(Color.gray.opacity(0.5)).padding(.top,30)
+                Text("(or)")
+                    .foregroundColor(Color.gray.opacity(0.5))
+                    .padding(.top, 30)
                 
-                HStack(spacing: 8){
+                HStack(spacing: 8) {
                     
-                    Text("Don't Have An Account ?").foregroundColor(Color.gray.opacity(0.5))
+                    Text("Don't Have An Account ?")
+                        .foregroundColor(Color.gray.opacity(0.5))
                     
                     Button(action: {
                         
@@ -113,6 +125,7 @@ struct SignIn : View {
                     }.foregroundColor(.blue)
                     
                 }.padding(.top, 25)
+                
             }.sheet(isPresented: $show, content: {
                 
                 SignUp(show: self.show)
