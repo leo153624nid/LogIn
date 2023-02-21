@@ -32,7 +32,7 @@ struct SignIn : View {
                         Text("Username")
                             .font(.headline)
                             .fontWeight(.light)
-                            .foregroundColor(Color.init(.label).opacity(0.75))
+                            .foregroundColor(Constants.blackOpacityColor)
                         
                         HStack{
                             
@@ -40,7 +40,7 @@ struct SignIn : View {
                             
                             if email != "" {
                                 
-                                Image(systemName: "checkmark").foregroundColor(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
+                                Image(systemName: "checkmark").foregroundColor(Constants.greenColor)
                             }
                             
                         }
@@ -54,15 +54,15 @@ struct SignIn : View {
                         Text("Password")
                             .font(.headline)
                             .fontWeight(.light)
-                            .foregroundColor(Color.init(.label).opacity(0.75))
+                            .foregroundColor(Constants.blackOpacityColor)
                         
                         HStack {
                             
                             SecureField("Enter Your Password", text: $pass)
                             
-                            if pass.count >= 6 {
+                            if pass.count >= Constants.passwordLenght {
                                 
-                                Image(systemName: "checkmark").foregroundColor(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
+                                Image(systemName: "checkmark").foregroundColor(Constants.greenColor)
                             }
                         }
                         
@@ -94,10 +94,11 @@ struct SignIn : View {
                 }) {
                     
                     Text("Sign In")
-                        .foregroundColor(.white)
-                        .frame(width: UIScreen.main.bounds.width - 120).padding()
+                        .foregroundColor(Constants.whiteColor)
+                        .frame(width: Constants.buttonWidth)
+                        .padding()
                     
-                }.background(Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)))
+                }.background(Constants.greenColor)
                 .clipShape(Capsule())
                 .padding(.top, 45)
                 .alert(isPresented: $alert, content: {
@@ -106,13 +107,13 @@ struct SignIn : View {
                 })
             
                 Text("(or)")
-                    .foregroundColor(Color.gray.opacity(0.5))
+                    .foregroundColor(Constants.grayOpacityColor)
                     .padding(.top, 30)
                 
                 HStack(spacing: 8) {
                     
                     Text("Don't Have An Account ?")
-                        .foregroundColor(Color.gray.opacity(0.5))
+                        .foregroundColor(Constants.grayOpacityColor)
                     
                     Button(action: {
                         
@@ -122,7 +123,7 @@ struct SignIn : View {
                         
                         Text("Sign Up")
                         
-                    }.foregroundColor(.blue)
+                    }.foregroundColor(Constants.blueColor)
                     
                 }.padding(.top, 25)
                 
