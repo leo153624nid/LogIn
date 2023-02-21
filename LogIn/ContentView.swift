@@ -10,15 +10,15 @@ import FirebaseCore
 import FirebaseAuth
 
 struct ContentView: View {
-    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+    @State var userName = UserDefaults.standard.value(forKey: "user") as? String ?? ""
     
     var body: some View {
         
         VStack {
             
-            if status {
+            if userName != "" {
                 
-                HomeView(name: .constant("111")) // todo
+                HomeView(name: $userName) // todo
                 
             }
             else {
@@ -30,9 +30,9 @@ struct ContentView: View {
         }.animation(.spring())
         .onAppear {
             
-            NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main, using: { _ in
+            NotificationCenter.default.addObserver(forName: NSNotification.Name("userChange"), object: nil, queue: .main, using: { _ in
                 
-                self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+                self.userName = UserDefaults.standard.value(forKey: "user") as? String ?? ""
             })
             
         }
