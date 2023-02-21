@@ -24,8 +24,8 @@ struct HomeView: View {
             
             Button(action: {
                 
-                UserDefaults.standard.set("", forKey: "user")
-                NotificationCenter.default.post(name: NSNotification.Name("userChange"), object: nil)
+                UserDefaults.standard.set("", forKey: Keys.user.rawValue)
+                NotificationCenter.default.post(name: .userChange, object: nil)
                 
             }, label: {
                 
