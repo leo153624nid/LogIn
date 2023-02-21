@@ -31,9 +31,10 @@ struct HomeView: View {
                 
                 Text("LogOut")
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.main.bounds.width - 120).padding()
+                    .frame(width: Constants.buttonWidth)
+                    .padding()
             })
-            .background(Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)))
+            .background(Constants.blueColor)
             .clipShape(Capsule())
             
             Spacer()
