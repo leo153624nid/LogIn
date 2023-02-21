@@ -17,7 +17,9 @@ struct SignUp : View {
     
     var body : some View {
         VStack {
-             Text("Sign Up").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+            
+            Text("Sign Up").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+            
             VStack{
                 
                 VStack(alignment: .leading){
@@ -64,6 +66,7 @@ struct SignUp : View {
                 }.padding(.horizontal, 6)
              
             }.padding()
+            
             VStack{
                 
                 Button(action: {
@@ -77,7 +80,7 @@ struct SignUp : View {
                         }
                         else {
                             
-                            UserDefaults.standard.set(true, forKey: "status")
+                            UserDefaults.standard.set(self.email, forKey: "user")
                             self.show.toggle()
                         }
                     }))
