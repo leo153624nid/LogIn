@@ -86,13 +86,13 @@
 			children = (
 				FA59AAB329A3AECC00D8E440 /* LogInApp.swift */,
 				FA59AAB529A3AECC00D8E440 /* ContentView.swift */,
+				FAA6A24829A3D5C7008EA109 /* SignIn.swift */,
 				FA59AAC329A3B9E400D8E440 /* SignUp.swift */,
 				FAA6A22829A3D0AB008EA109 /* HomeView.swift */,
 				FA59AAB729A3AECE00D8E440 /* Assets.xcassets */,
 				FA59AABC29A3AECE00D8E440 /* Info.plist */,
 				FAA6A22429A3CA59008EA109 /* GoogleService-Info.plist */,
 				FA59AAB929A3AECE00D8E440 /* Preview Content */,
-				FAA6A24829A3D5C7008EA109 /* SignIn.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
